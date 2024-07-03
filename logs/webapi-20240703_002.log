@@ -1,0 +1,277 @@
+2024-07-03 19:38:10.269 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 19:38:10.474 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 19:38:10.873 +04:00  INF  Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-03 19:38:10.907 +04:00  INF  Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-03 19:38:10.911 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-03 19:38:10.912 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-03 19:38:10.925 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-03 19:38:10.943 +04:00  INF  Applying migration '20240703153758_CreatedIdentityTables'.
+2024-07-03 19:38:11.138 +04:00  INF  Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2024-07-03 19:38:11.141 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [FullName] nvarchar(max) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2024-07-03 19:38:11.144 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2024-07-03 19:38:11.145 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-07-03 19:38:11.149 +04:00  INF  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-07-03 19:38:11.154 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-07-03 19:38:11.156 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-07-03 19:38:11.158 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2024-07-03 19:38:11.161 +04:00  INF  Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2024-07-03 19:38:11.162 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2024-07-03 19:38:11.163 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2024-07-03 19:38:11.164 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2024-07-03 19:38:11.165 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2024-07-03 19:38:11.166 +04:00  INF  Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2024-07-03 19:38:11.168 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240703153758_CreatedIdentityTables', N'6.0.31');
+2024-07-03 20:59:53.860 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 20:59:54.694 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 20:59:54.694 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 20:59:54.698 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 20:59:54.698 +04:00  INF  Hosting environment: Development
+2024-07-03 20:59:54.701 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 20:59:54.907 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 20:59:55.208 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 304.2427ms
+2024-07-03 20:59:55.215 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 20:59:55.217 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.7137ms
+2024-07-03 20:59:55.340 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 20:59:55.383 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.4907ms
+2024-07-03 20:59:55.440 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 20:59:55.565 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 125.9572ms
+2024-07-03 21:01:19.398 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 21:01:19.594 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 21:01:19.594 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 21:01:19.597 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 21:01:19.597 +04:00  INF  Hosting environment: Development
+2024-07-03 21:01:19.597 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 21:01:19.800 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 21:01:20.034 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 238.5884ms
+2024-07-03 21:01:20.041 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 21:01:20.041 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 21:01:20.044 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.1761ms
+2024-07-03 21:01:20.080 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.6000ms
+2024-07-03 21:01:20.190 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 21:01:20.307 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 116.7382ms
+2024-07-03 21:03:02.121 +04:00  INF  Request starting HTTP/2 POST https://localhost:7095/api/Account/SignUp application/json 115
+2024-07-03 21:03:02.136 +04:00  INF  Executing endpoint 'App.Controllers.UI.AccountController.SignUp (App)'
+2024-07-03 21:03:02.169 +04:00  INF  Route matched with {action = "SignUp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignUp(Service.DTOs.Account.RegisterDto) on controller App.Controllers.UI.AccountController (App).
+2024-07-03 21:03:03.736 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 21:03:03.909 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 21:03:05.013 +04:00  INF  Executed DbCommand (62ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-07-03 21:03:05.059 +04:00  INF  Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-07-03 21:03:05.341 +04:00  INF  Executed DbCommand (77ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-07-03 21:03:05.368 +04:00  INF  Executing OkObjectResult, writing value of type 'Service.Helpers.Account.RegisterResponse'.
+2024-07-03 21:03:05.379 +04:00  INF  Executed action App.Controllers.UI.AccountController.SignUp (App) in 3202.7778ms
+2024-07-03 21:03:05.379 +04:00  INF  Executed endpoint 'App.Controllers.UI.AccountController.SignUp (App)'
+2024-07-03 21:03:05.387 +04:00  INF  Request finished HTTP/2 POST https://localhost:7095/api/Account/SignUp application/json 115 - 200 - application/json;+charset=utf-8 3265.9467ms
+2024-07-03 21:09:49.567 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 21:09:49.748 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 21:09:49.748 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 21:09:49.751 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 21:09:49.751 +04:00  INF  Hosting environment: Development
+2024-07-03 21:09:49.751 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 21:09:50.155 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 21:09:50.411 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 258.8868ms
+2024-07-03 21:09:50.415 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 21:09:50.417 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 21:09:50.419 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.1783ms
+2024-07-03 21:09:50.453 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.5949ms
+2024-07-03 21:09:50.722 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 21:09:50.834 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 112.2920ms
+2024-07-03 21:26:07.473 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 21:26:07.653 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 21:26:07.653 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 21:26:07.657 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 21:26:07.657 +04:00  INF  Hosting environment: Development
+2024-07-03 21:26:07.657 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 21:26:07.911 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 21:26:08.138 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 230.8314ms
+2024-07-03 21:26:08.212 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 21:26:08.212 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 21:26:08.214 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1.9778ms
+2024-07-03 21:26:08.256 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.5984ms
+2024-07-03 21:26:08.475 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 21:26:08.588 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 113.3978ms
+2024-07-03 21:26:14.498 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/Account/GetAllUsers - -
+2024-07-03 21:26:14.514 +04:00  INF  Executing endpoint 'App.Controllers.UI.AccountController.GetAllUsers (App)'
+2024-07-03 21:26:14.537 +04:00  INF  Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller App.Controllers.UI.AccountController (App).
+2024-07-03 21:26:15.574 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 21:26:15.751 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 21:26:16.425 +04:00  INF  Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-07-03 21:26:16.553 +04:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Account.UserDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-03 21:26:16.563 +04:00  INF  Executed action App.Controllers.UI.AccountController.GetAllUsers (App) in 2019.4489ms
+2024-07-03 21:26:16.563 +04:00  INF  Executed endpoint 'App.Controllers.UI.AccountController.GetAllUsers (App)'
+2024-07-03 21:26:16.571 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/Account/GetAllUsers - - - 200 - application/json;+charset=utf-8 2073.6391ms
+2024-07-03 21:26:50.069 +04:00  INF  Request starting HTTP/2 POST https://localhost:7095/api/Account/SignUp application/json 116
+2024-07-03 21:26:50.071 +04:00  INF  Executing endpoint 'App.Controllers.UI.AccountController.SignUp (App)'
+2024-07-03 21:26:50.085 +04:00  INF  Route matched with {action = "SignUp", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SignUp(Service.DTOs.Account.RegisterDto) on controller App.Controllers.UI.AccountController (App).
+2024-07-03 21:26:50.245 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 21:26:50.453 +04:00  INF  Executed DbCommand (110ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-07-03 21:26:50.479 +04:00  INF  Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-07-03 21:26:50.618 +04:00  INF  Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-07-03 21:26:50.713 +04:00  INF  Executing OkObjectResult, writing value of type 'Service.Helpers.Account.RegisterResponse'.
+2024-07-03 21:26:50.714 +04:00  INF  Executed action App.Controllers.UI.AccountController.SignUp (App) in 628.7108ms
+2024-07-03 21:26:50.715 +04:00  INF  Executed endpoint 'App.Controllers.UI.AccountController.SignUp (App)'
+2024-07-03 21:26:50.715 +04:00  INF  Request finished HTTP/2 POST https://localhost:7095/api/Account/SignUp application/json 116 - 200 - application/json;+charset=utf-8 646.4296ms
+2024-07-03 21:26:57.683 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/Account/GetAllUsers - -
+2024-07-03 21:26:57.686 +04:00  INF  Executing endpoint 'App.Controllers.UI.AccountController.GetAllUsers (App)'
+2024-07-03 21:26:57.686 +04:00  INF  Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller App.Controllers.UI.AccountController (App).
+2024-07-03 21:26:57.709 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 21:26:57.712 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-07-03 21:26:57.713 +04:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Account.UserDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-03 21:26:57.714 +04:00  INF  Executed action App.Controllers.UI.AccountController.GetAllUsers (App) in 27.7308ms
+2024-07-03 21:26:57.714 +04:00  INF  Executed endpoint 'App.Controllers.UI.AccountController.GetAllUsers (App)'
+2024-07-03 21:26:57.714 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/Account/GetAllUsers - - - 200 - application/json;+charset=utf-8 30.9290ms
+2024-07-03 21:36:07.938 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 21:36:08.114 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 21:36:08.114 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 21:36:08.117 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 21:36:08.117 +04:00  INF  Hosting environment: Development
+2024-07-03 21:36:08.117 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 21:36:08.463 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 21:36:08.680 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 225.3037ms
+2024-07-03 21:36:08.690 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 21:36:08.690 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 21:36:08.692 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1.9598ms
+2024-07-03 21:36:08.724 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.7601ms
+2024-07-03 21:36:08.990 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 21:36:09.104 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 113.8563ms
+2024-07-03 21:36:20.751 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 21:36:20.931 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 21:36:20.931 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 21:36:20.934 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 21:36:20.935 +04:00  INF  Hosting environment: Development
+2024-07-03 21:36:20.935 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 21:36:21.264 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 21:36:21.495 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 235.4323ms
+2024-07-03 21:36:21.504 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 21:36:21.504 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 21:36:21.506 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.3328ms
+2024-07-03 21:36:21.541 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.1675ms
+2024-07-03 21:36:21.681 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 21:36:21.792 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 110.5603ms
+2024-07-03 21:36:45.368 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/Account/GetUserByUseranme?username=Behruz - -
+2024-07-03 21:36:45.388 +04:00  INF  Executing endpoint 'App.Controllers.UI.AccountController.GetUserByUseranme (App)'
+2024-07-03 21:36:45.423 +04:00  INF  Route matched with {action = "GetUserByUseranme", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByUseranme(System.String) on controller App.Controllers.UI.AccountController (App).
+2024-07-03 21:36:46.479 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 21:36:46.654 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 21:36:47.440 +04:00  INF  Executed DbCommand (57ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-07-03 21:36:47.558 +04:00  INF  Executing OkObjectResult, writing value of type 'Service.DTOs.Account.UserDto'.
+2024-07-03 21:36:47.567 +04:00  INF  Executed action App.Controllers.UI.AccountController.GetUserByUseranme (App) in 2137.6745ms
+2024-07-03 21:36:47.567 +04:00  INF  Executed endpoint 'App.Controllers.UI.AccountController.GetUserByUseranme (App)'
+2024-07-03 21:36:47.573 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/Account/GetUserByUseranme?username=Behruz - - - 200 - application/json;+charset=utf-8 2205.2024ms
+2024-07-03 21:36:59.322 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/Account/GetUserByUseranme?username=Behruz11 - -
+2024-07-03 21:36:59.326 +04:00  INF  Executing endpoint 'App.Controllers.UI.AccountController.GetUserByUseranme (App)'
+2024-07-03 21:36:59.326 +04:00  INF  Route matched with {action = "GetUserByUseranme", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserByUseranme(System.String) on controller App.Controllers.UI.AccountController (App).
+2024-07-03 21:36:59.376 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 21:36:59.387 +04:00  INF  Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-07-03 21:36:59.459 +04:00  INF  Executed action App.Controllers.UI.AccountController.GetUserByUseranme (App) in 132.7456ms
+2024-07-03 21:36:59.459 +04:00  INF  Executed endpoint 'App.Controllers.UI.AccountController.GetUserByUseranme (App)'
+2024-07-03 21:36:59.462 +04:00  ERR  Behruz11 - username notfound
+2024-07-03 21:36:59.464 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/Account/GetUserByUseranme?username=Behruz11 - - - 404 - application/json 141.2470ms

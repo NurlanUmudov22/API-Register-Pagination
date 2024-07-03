@@ -1,0 +1,110 @@
+2024-07-03 18:26:20.353 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 18:26:20.392 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 18:26:20.397 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 18:26:20.397 +04:00  INF  Hosting environment: Development
+2024-07-03 18:26:20.397 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 18:26:20.783 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 18:26:21.048 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 268.5352ms
+2024-07-03 18:26:21.060 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 18:26:21.062 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.3132ms
+2024-07-03 18:26:21.166 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 18:26:21.220 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.6379ms
+2024-07-03 18:26:21.266 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 18:26:21.384 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 117.5289ms
+2024-07-03 18:41:24.945 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 18:41:24.975 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 18:41:24.980 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 18:41:24.981 +04:00  INF  Hosting environment: Development
+2024-07-03 18:41:24.981 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 18:41:25.240 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 18:41:25.458 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 222.1611ms
+2024-07-03 18:41:25.469 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 18:41:25.471 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1.9759ms
+2024-07-03 18:41:25.586 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 18:41:25.622 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.4998ms
+2024-07-03 18:41:25.689 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 18:41:25.822 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.7180ms
+2024-07-03 18:42:13.633 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=1&take=2 - -
+2024-07-03 18:42:13.640 +04:00  INF  Executing endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 18:42:13.749 +04:00  INF  Route matched with {action = "GetPaginateDatas", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginateDatas(Int32, Int32) on controller App.Controllers.Admin.CityController (App).
+2024-07-03 18:42:14.949 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 18:42:15.195 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 18:42:15.791 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 18:42:15.792 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 18:42:16.902 +04:00  INF  Executed DbCommand (59ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryId], [c].[CreatedDate], [c].[Name], [c].[Population], [c].[SoftDelete]
+FROM [Cities] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-03 18:42:17.016 +04:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Admin.Cities.CityDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-03 18:42:17.027 +04:00  INF  Executed action App.Controllers.Admin.CityController.GetPaginateDatas (App) in 3272.0687ms
+2024-07-03 18:42:17.027 +04:00  INF  Executed endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 18:42:17.033 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=1&take=2 - - - 200 - application/json;+charset=utf-8 3399.7187ms
+2024-07-03 18:42:23.385 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=2&take=2 - -
+2024-07-03 18:42:23.389 +04:00  INF  Executing endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 18:42:23.389 +04:00  INF  Route matched with {action = "GetPaginateDatas", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginateDatas(Int32, Int32) on controller App.Controllers.Admin.CityController (App).
+2024-07-03 18:42:23.451 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 18:42:23.477 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 18:42:23.477 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 18:42:23.486 +04:00  INF  Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryId], [c].[CreatedDate], [c].[Name], [c].[Population], [c].[SoftDelete]
+FROM [Cities] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2024-07-03 18:42:23.487 +04:00  INF  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Admin.Cities.CityDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-03 18:42:23.487 +04:00  INF  Executed action App.Controllers.Admin.CityController.GetPaginateDatas (App) in 97.9781ms
+2024-07-03 18:42:23.487 +04:00  INF  Executed endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 18:42:23.488 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=2&take=2 - - - 200 - application/json;+charset=utf-8 102.8656ms
+2024-07-03 19:20:14.145 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 19:20:14.179 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 19:20:14.183 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 19:20:14.183 +04:00  INF  Hosting environment: Development
+2024-07-03 19:20:14.183 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 19:20:14.392 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 19:20:14.695 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 306.7269ms
+2024-07-03 19:20:14.700 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 19:20:14.702 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.1674ms
+2024-07-03 19:20:14.824 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 19:20:14.862 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.9824ms
+2024-07-03 19:20:14.926 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 19:20:15.056 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 130.7893ms
+2024-07-03 19:20:27.067 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=1&take=2 - -
+2024-07-03 19:20:27.075 +04:00  INF  Executing endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 19:20:27.110 +04:00  INF  Route matched with {action = "GetPaginateDatas", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginateDatas(Int32, Int32) on controller App.Controllers.Admin.CityController (App).
+2024-07-03 19:20:27.895 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 19:20:28.073 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 19:20:28.916 +04:00  INF  Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryId], [c].[CreatedDate], [c].[Name], [c].[Population], [c].[SoftDelete]
+FROM [Cities] AS [c]
+2024-07-03 19:20:28.982 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 19:20:28.983 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 19:20:29.022 +04:00  INF  Executed DbCommand (26ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryId], [c].[CreatedDate], [c].[Name], [c].[Population], [c].[SoftDelete]
+FROM [Cities] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-03 19:20:29.095 +04:00  INF  Executing OkObjectResult, writing value of type 'Repository.Helpers.PaginationResponse`1[[Service.DTOs.Admin.Cities.CityDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-03 19:20:29.107 +04:00  INF  Executed action App.Controllers.Admin.CityController.GetPaginateDatas (App) in 1990.224ms
+2024-07-03 19:20:29.108 +04:00  INF  Executed endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 19:20:29.113 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=1&take=2 - - - 200 - application/json;+charset=utf-8 2046.3782ms
+2024-07-03 19:20:37.614 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=2&take=2 - -
+2024-07-03 19:20:37.619 +04:00  INF  Executing endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 19:20:37.619 +04:00  INF  Route matched with {action = "GetPaginateDatas", controller = "City"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPaginateDatas(Int32, Int32) on controller App.Controllers.Admin.CityController (App).
+2024-07-03 19:20:37.700 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 19:20:37.724 +04:00  INF  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryId], [c].[CreatedDate], [c].[Name], [c].[Population], [c].[SoftDelete]
+FROM [Cities] AS [c]
+2024-07-03 19:20:37.725 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 19:20:37.725 +04:00  WRN  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-03 19:20:37.731 +04:00  INF  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CountryId], [c].[CreatedDate], [c].[Name], [c].[Population], [c].[SoftDelete]
+FROM [Cities] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2024-07-03 19:20:37.732 +04:00  INF  Executing OkObjectResult, writing value of type 'Repository.Helpers.PaginationResponse`1[[Service.DTOs.Admin.Cities.CityDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-03 19:20:37.732 +04:00  INF  Executed action App.Controllers.Admin.CityController.GetPaginateDatas (App) in 112.7595ms
+2024-07-03 19:20:37.732 +04:00  INF  Executed endpoint 'App.Controllers.Admin.CityController.GetPaginateDatas (App)'
+2024-07-03 19:20:37.733 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/api/admin/City/GetPaginateDatas?page=2&take=2 - - - 200 - application/json;+charset=utf-8 118.3539ms
+2024-07-03 19:37:57.764 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-07-03 19:37:57.971 +04:00  INF  Entity Framework Core 6.0.31 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.31' with options: None
+2024-07-03 19:37:58.021 +04:00  WRN  No store type was specified for the decimal property 'Salary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.

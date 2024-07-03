@@ -1,0 +1,28 @@
+2024-07-03 19:37:57.949 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 19:37:58.157 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 19:37:58.158 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 19:37:58.161 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 19:37:58.161 +04:00  INF  Hosting environment: Development
+2024-07-03 19:37:58.161 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 19:37:58.284 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 19:37:58.497 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 216.4874ms
+2024-07-03 19:37:58.499 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 19:37:58.499 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 19:37:58.501 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 2.3467ms
+2024-07-03 19:37:58.536 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 37.0433ms
+2024-07-03 19:37:58.871 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 19:37:59.004 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.6428ms
+2024-07-03 19:38:09.489 +04:00  INF  User profile is available. Using 'C:\Users\ASUS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-03 19:38:09.668 +04:00  INF  Now listening on: https://localhost:7095
+2024-07-03 19:38:09.668 +04:00  INF  Now listening on: http://localhost:5035
+2024-07-03 19:38:09.671 +04:00  INF  Application started. Press Ctrl+C to shut down.
+2024-07-03 19:38:09.671 +04:00  INF  Hosting environment: Development
+2024-07-03 19:38:09.671 +04:00  INF  Content root path: C:\Users\ASUS\OneDrive\Рабочий стол\API\API-COURSEapp\App\
+2024-07-03 19:38:09.913 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - -
+2024-07-03 19:38:10.133 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - - - 200 - text/html;charset=utf-8 223.4868ms
+2024-07-03 19:38:10.140 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - -
+2024-07-03 19:38:10.140 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - -
+2024-07-03 19:38:10.142 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 1.8633ms
+2024-07-03 19:38:10.182 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.9081ms
+2024-07-03 19:38:10.307 +04:00  INF  Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - -
+2024-07-03 19:38:10.412 +04:00  INF  Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 104.7552ms
